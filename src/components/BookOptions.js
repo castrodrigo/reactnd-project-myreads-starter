@@ -1,16 +1,23 @@
 import React from 'react';
 
 const BookOptions = ({ shelf }) => {
+  const options = [
+    { key: 'currentlyReading', name: 'Currently Reading' },
+    { key: 'wantToRead', name: 'Want to Read' },
+    { key: 'read', name: 'Read' },
+    { key: 'none', name: 'None' }
+  ];
   return (
     <div className="book-shelf-changer">
-      <select>
+      <select value={shelf}>
         <option value="move" disabled>
           Move to...
         </option>
-        <option value="currentlyReading">Currently Reading</option>
-        <option value="wantToRead">Want to Read</option>
-        <option value="read">Read</option>
-        <option value="none">None</option>
+        {options.map(option => (
+          <option key={option.key} value={option.key}>
+            {option.name}
+          </option>
+        ))}
       </select>
     </div>
   );
