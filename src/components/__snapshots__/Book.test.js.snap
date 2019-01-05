@@ -93,11 +93,13 @@ ShallowWrapper {
         >
           The Linux Command Line
         </div>
-        <div
-          className="book-authors"
-        >
-          William E. Shotts, Jr.
-        </div>
+        <BookAuthors
+          authors={
+            Array [
+              "William E. Shotts, Jr.",
+            ]
+          }
+        />
       </div>,
     },
     "ref": null,
@@ -129,11 +131,13 @@ ShallowWrapper {
           >
             The Linux Command Line
           </div>,
-          <div
-            className="book-authors"
-          >
-            William E. Shotts, Jr.
-          </div>,
+          <BookAuthors
+            authors={
+              Array [
+                "William E. Shotts, Jr.",
+              ]
+            }
+          />,
         ],
         "className": "book",
       },
@@ -208,14 +212,15 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "function",
           "props": Object {
-            "children": "William E. Shotts, Jr.",
-            "className": "book-authors",
+            "authors": Array [
+              "William E. Shotts, Jr.",
+            ],
           },
           "ref": null,
-          "rendered": "William E. Shotts, Jr.",
-          "type": "div",
+          "rendered": null,
+          "type": [Function],
         },
       ],
       "type": "div",
@@ -253,11 +258,13 @@ ShallowWrapper {
           >
             The Linux Command Line
           </div>
-          <div
-            className="book-authors"
-          >
-            William E. Shotts, Jr.
-          </div>
+          <BookAuthors
+            authors={
+              Array [
+                "William E. Shotts, Jr.",
+              ]
+            }
+          />
         </div>,
       },
       "ref": null,
@@ -289,11 +296,13 @@ ShallowWrapper {
             >
               The Linux Command Line
             </div>,
-            <div
-              className="book-authors"
-            >
-              William E. Shotts, Jr.
-            </div>,
+            <BookAuthors
+              authors={
+                Array [
+                  "William E. Shotts, Jr.",
+                ]
+              }
+            />,
           ],
           "className": "book",
         },
@@ -368,14 +377,15 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "host",
+            "nodeType": "function",
             "props": Object {
-              "children": "William E. Shotts, Jr.",
-              "className": "book-authors",
+              "authors": Array [
+                "William E. Shotts, Jr.",
+              ],
             },
             "ref": null,
-            "rendered": "William E. Shotts, Jr.",
-            "type": "div",
+            "rendered": null,
+            "type": [Function],
           },
         ],
         "type": "div",
