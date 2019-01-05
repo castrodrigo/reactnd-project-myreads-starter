@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import BookCover from './BookCover';
 import BookOptions from './BookOptions';
+import BookAuthors from './BookAuthors';
 
 const Book = ({ book }) => (
   <li>
@@ -10,9 +12,18 @@ const Book = ({ book }) => (
         <BookOptions shelf={book.shelf} />
       </div>
       <div className="book-title">{book.title}</div>
-      <div className="book-authors">{book.author}</div>
+      <BookAuthors authors={book.authors} />
     </div>
   </li>
 );
+
+Book.propTypes = {
+  book: PropTypes.shape({
+    imageLinks: PropTypes.object.isRequired,
+    shelf: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    authors: PropTypes.array.isRequired
+  }).isRequired
+};
 
 export default Book;
