@@ -19,7 +19,10 @@ BookCover.propTypes = {
 
 BookCover.defaultProps = {
   width: 128,
-  height: 193
+  height: 193,
+  imageLinks: {
+    thumbnail: ''
+  }
 };
 
 export default BookCover;

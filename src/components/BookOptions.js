@@ -25,8 +25,12 @@ const BookOptions = ({ shelf, onUpdate }) => {
 };
 
 BookOptions.propTypes = {
-  shelf: PropTypes.string.isRequired,
+  shelf: PropTypes.string,
   onUpdate: PropTypes.func.isRequired
+};
+
+BookOptions.defaulProps = {
+  shelf: null
 };
 
 export default BookOptions;
