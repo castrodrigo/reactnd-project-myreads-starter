@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { throttle, debounce } from 'throttle-debounce';
 import Search from './Search';
-import Book from './Book';
+import SearchResults from './SearchResults';
 import searchData from './__mocks__/searchData';
 
 jest.mock('throttle-debounce', () => ({
@@ -40,9 +40,9 @@ describe('Search', () => {
       .instance()
       .setState({ searchedBooks: searchData.books, query: 'sci' });
 
-    const books = wrapper.find(Book);
+    const results = wrapper.find(SearchResults);
 
-    expect(books.length).toBe(2);
+    expect(results.props().searched.length).toBe(2);
   });
 
   it('should should show no books if no books were found', () => {
@@ -50,9 +50,9 @@ describe('Search', () => {
     const input = wrapper.find('input');
 
     input.simulate('change', { target: { value: 'momentum' } });
-    const books = wrapper.find(Book);
+    const results = wrapper.find(SearchResults);
 
-    expect(books.length).toBe(0);
+    expect(results.props().searched.length).toBe(0);
   });
 
   it('should should show no books if search field is empty', () => {
@@ -60,8 +60,8 @@ describe('Search', () => {
     const input = wrapper.find('input');
 
     input.simulate('change', { target: { value: '' } });
-    const books = wrapper.find(Book);
+    const results = wrapper.find(SearchResults);
 
-    expect(books.length).toBe(0);
+    expect(results.props().searched.length).toBe(0);
   });
 });
