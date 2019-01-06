@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { throttle, debounce } from 'throttle-debounce';
 import { Link } from 'react-router-dom';
 import { search } from '../api/BooksAPI';
 import Book from './Book';
-import { debounce } from '../utils/debounce';
 
 class Search extends React.Component {
   state = {
@@ -11,15 +11,23 @@ class Search extends React.Component {
     query: ''
   };
 
-  onSearchHandler = debounce(query => {
-    this.setState({ query });
-    if (query.length > 0) {
-      return search(query).then(books => {
-        this.setState({ searchedBooks: books.items ? [] : books });
-      });
-    }
-    this.setState({ searchedBooks: [], query });
-  }, 10);
+  onQuerySearchHandler = query => {
+    search(query).then(books => {
+      const booksData = books ? (books.error ? [] : books) : [];
+      this.setState({ searchedBooks: booksData });
+    });
+  };
+
+  onQueryChangeHandler = query => {
+    this.setState({ query }, () => {
+      const { query } = this.state;
+      if (query.length < 3) {
+        throttle(250, this.onQuerySearchHandler(query));
+      } else {
+        debounce(250, this.onQuerySearchHandler(query));
+      }
+    });
+  };
 
   render() {
     return (
@@ -32,7 +40,7 @@ class Search extends React.Component {
             <input
               type="text"
               placeholder="Search by title or author"
-              onChange={e => this.onSearchHandler(e.target.value)}
+              onChange={e => this.onQueryChangeHandler(e.target.value)}
               value={this.state.query}
             />
           </div>
