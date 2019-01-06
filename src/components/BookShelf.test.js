@@ -31,7 +31,8 @@ describe('Book Shelf', () => {
         tittle: 'book4',
         shelf: 'sh3'
       }
-    ]
+    ],
+    onBookUpdate: jest.fn()
   };
 
   it('should filter books by shelf', () => {

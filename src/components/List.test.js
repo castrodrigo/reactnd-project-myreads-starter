@@ -6,7 +6,8 @@ import BookShelf from './BookShelf';
 describe('List', () => {
   const props = {
     books: [],
-    shelves: [{ name: 'Sh 1', type: 'sh1' }, { name: 'Sh 2', type: 'sh2' }]
+    shelves: [{ name: 'Sh 1', type: 'sh1' }, { name: 'Sh 2', type: 'sh2' }],
+    onBookUpdate: jest.fn()
   };
 
   it('should render as multilple shelves as received', () => {

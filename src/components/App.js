@@ -17,6 +17,25 @@ class BooksApp extends React.Component {
   componentDidMount() {
     BooksAPI.getAll().then(books => this.setState({ books }));
   }
+  updateBookShelfHandler = (book, shelf) => {
+    BooksAPI.update(book, shelf).then(data => {
+      const updatedShelf = Object.keys(data).find(
+        key => data[key].filter(itemId => itemId === book.id)[0]
+      );
+      if (updatedShelf === shelf) {
+        this.setState(prevState => ({
+          books: [
+            ...prevState.books.filter(item => item.id !== book.id),
+            { ...book, shelf }
+          ]
+        }));
+      } else {
+        this.setState(prevState => ({
+          books: [...prevState.books.filter(item => item.id !== book.id)]
+        }));
+      }
+    });
+  };
   render() {
     return (
       <div className="app">
@@ -24,7 +43,11 @@ class BooksApp extends React.Component {
           exact
           path="/"
           render={() => (
-            <List books={this.state.books} shelves={this.shelves} />
+            <List
+              books={this.state.books}
+              shelves={this.shelves}
+              onBookUpdate={this.updateBookShelfHandler}
+            />
           )}
         />
         <Route

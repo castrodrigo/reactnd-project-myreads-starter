@@ -54,6 +54,7 @@ ShallowWrapper {
         "title": "The Linux Command Line",
       }
     }
+    onUpdate={[MockFunction]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -85,6 +86,7 @@ ShallowWrapper {
             width={128}
           />
           <BookOptions
+            onUpdate={[Function]}
             shelf="currentlyReading"
           />
         </div>
@@ -123,6 +125,7 @@ ShallowWrapper {
               width={128}
             />
             <BookOptions
+              onUpdate={[Function]}
               shelf="currentlyReading"
             />
           </div>,
@@ -160,6 +163,7 @@ ShallowWrapper {
                 width={128}
               />,
               <BookOptions
+                onUpdate={[Function]}
                 shelf="currentlyReading"
               />,
             ],
@@ -188,6 +192,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
+                "onUpdate": [Function],
                 "shelf": "currentlyReading",
               },
               "ref": null,
@@ -250,6 +255,7 @@ ShallowWrapper {
               width={128}
             />
             <BookOptions
+              onUpdate={[Function]}
               shelf="currentlyReading"
             />
           </div>
@@ -288,6 +294,7 @@ ShallowWrapper {
                 width={128}
               />
               <BookOptions
+                onUpdate={[Function]}
                 shelf="currentlyReading"
               />
             </div>,
@@ -325,6 +332,7 @@ ShallowWrapper {
                   width={128}
                 />,
                 <BookOptions
+                  onUpdate={[Function]}
                   shelf="currentlyReading"
                 />,
               ],
@@ -353,6 +361,7 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
+                  "onUpdate": [Function],
                   "shelf": "currentlyReading",
                 },
                 "ref": null,

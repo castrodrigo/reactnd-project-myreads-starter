@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import BookShelf from './BookShelf';
 
-const List = ({ books, shelves }) => (
+const List = ({ books, shelves, onBookUpdate }) => (
   <div className="list-books">
     <div className="list-books-title">
       <h1>MyReads</h1>
@@ -16,6 +16,7 @@ const List = ({ books, shelves }) => (
             shelf={shelf.type}
             name={shelf.name}
             books={books}
+            onBookUpdate={onBookUpdate}
           />
         ))}
       </div>
@@ -28,7 +29,8 @@ const List = ({ books, shelves }) => (
 
 List.propTypes = {
   books: PropTypes.array.isRequired,
-  shelves: PropTypes.array.isRequired
+  shelves: PropTypes.array.isRequired,
+  onBookUpdate: PropTypes.func.isRequired
 };
 
 export default List;

@@ -5,7 +5,7 @@ import BookOptions from './BookOptions';
 describe('Book Options', () => {
   const props = {
     shelf: 'wantToRead',
-    onChange: jest.fn()
+    onUpdate: jest.fn()
   };
 
   it('should show the selection value received', () => {
@@ -22,5 +22,13 @@ describe('Book Options', () => {
     const select = wrapper.find('select');
 
     expect(select.props().value).toBe('');
+  });
+
+  it('should call onUpdate on change', () => {
+    const wrapper = shallow(<BookOptions {...props} />);
+
+    wrapper.find('select').simulate('change', { target: { value: 'read' } });
+
+    expect(props.onUpdate).toHaveBeenCalledTimes(1);
   });
 });

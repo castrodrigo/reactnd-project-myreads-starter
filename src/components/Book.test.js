@@ -7,7 +7,8 @@ describe('Book', () => {
   const props = {
     book: {
       ...BookMockData
-    }
+    },
+    onUpdate: jest.fn()
   };
   it('should render properly', () => {
     const wrapper = shallow(<Book {...props} />);
