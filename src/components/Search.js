@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { throttle, debounce } from 'throttle-debounce';
 import { Link } from 'react-router-dom';
 import { search } from '../api/BooksAPI';
-import Book from './Book';
+import SearchedResults from './SearchResults';
 
 class Search extends React.Component {
   state = {
@@ -45,25 +45,23 @@ class Search extends React.Component {
             />
           </div>
         </div>
-        <div className="search-books-results">
-          {this.state.error && <p>{this.state.error}</p>}
-          <ol className="books-grid">
-            {this.state.searchedBooks.map(book => (
-              <Book
-                key={book.id}
-                book={book}
-                onUpdate={this.props.onBookUpdate}
-              />
-            ))}
-          </ol>
-        </div>
+        <SearchedResults
+          onBookUpdate={this.props.onBookUpdate}
+          searched={this.state.searchedBooks}
+          filtered={this.props.filteredByShelf}
+        />
       </div>
     );
   }
 }
 
 Search.propTypes = {
-  onBookUpdate: PropTypes.func.isRequired
+  onBookUpdate: PropTypes.func.isRequired,
+  filteredByShelf: PropTypes.object.isRequired
+};
+
+Search.defaultProps = {
+  filteredByShelf: {}
 };
 
 export default Search;
