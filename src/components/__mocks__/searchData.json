@@ -1,0 +1,64 @@
+{
+  "books": [
+    {
+      "title": "Science Fiction",
+      "authors": ["Roger Luckhurst"],
+      "publisher": "Polity",
+      "publishedDate": "2005-05-06",
+      "description": "In this new and timely cultural history of science fiction, Roger Luckhurst examines the genre from its origins in the late nineteenth century to its latest manifestations. The book introduces and explicates major works of science fiction literature by placing them in a series of contexts, using the history of science and technology, political and economic history, and cultural theory to develop the means for understanding the unique qualities of the genre. Luckhurst reads science fiction as a literature of modernity. His astute analysis examines how the genre provides a constantly modulating record of how human embodiment is transformed by scientific and technological change and how the very sense of self is imaginatively recomposed in popular fictions that range from utopian possibility to Gothic terror. This highly readable study charts the overlapping yet distinct histories of British and American science fiction, with commentary on the central authors, magazines, movements and texts from 1880 to the present day. It will be an invaluable guide and resource for all students taking courses on science fiction, technoculture and popular literature, but will equally be fascinating for anyone who has ever enjoyed a science fiction book.",
+      "industryIdentifiers": [
+        { "type": "ISBN_13", "identifier": "9780745628936" },
+        { "type": "ISBN_10", "identifier": "0745628931" }
+      ],
+      "readingModes": { "text": false, "image": true },
+      "pageCount": 305,
+      "printType": "BOOK",
+      "categories": ["Language Arts & Disciplines"],
+      "maturityRating": "NOT_MATURE",
+      "allowAnonLogging": false,
+      "contentVersion": "1.2.0.0.preview.1",
+      "imageLinks": {
+        "smallThumbnail": "http://books.google.com/books/content?id=F3JU3SJ5fDIC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=F3JU3SJ5fDIC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      },
+      "language": "en",
+      "previewLink": "http://books.google.com/books?id=F3JU3SJ5fDIC&printsec=frontcover&dq=science+fiction&hl=&cd=1&source=gbs_api",
+      "infoLink": "http://books.google.com/books?id=F3JU3SJ5fDIC&dq=science+fiction&hl=&source=gbs_api",
+      "canonicalVolumeLink": "https://books.google.com/books/about/Science_Fiction.html?hl=&id=F3JU3SJ5fDIC",
+      "id": "F3JU3SJ5fDIC"
+    },
+    {
+      "title": "The Science Fiction Handbook",
+      "authors": ["M. Keith Booker", "Anne-Marie Thomas"],
+      "publisher": "John Wiley & Sons",
+      "publishedDate": "2009-03-30",
+      "description": "The Science Fiction Handbook offers a comprehensive and accessible survey of one of the literary world's most fascinating genres. Includes separate historical surveys of key subgenres including time-travel narratives, post-apocalyptic and post-disaster narratives and works of utopian and dystopian science fiction Each subgenre survey includes an extensive list of relevant critical readings, recommended novels in the subgenre, and recommended films relevant to the subgenre Features entries on a number of key science fiction authors and extensive discussion of major science fiction novels or sequences Writers and works include Isaac Asimov; Margaret Atwood; George Orwell; Ursula K. Le Guin; The War of the Worlds (1898); Starship Troopers (1959); Mars Trilogy (1993-6); and many more A 'Science Fiction Glossary' completes this indispensable Handbook",
+      "industryIdentifiers": [
+        { "type": "ISBN_10", "identifier": "1444310356" },
+        { "type": "ISBN_13", "identifier": "9781444310351" }
+      ],
+      "readingModes": { "text": false, "image": true },
+      "pageCount": 360,
+      "printType": "BOOK",
+      "categories": ["Literary Criticism"],
+      "averageRating": 4,
+      "ratingsCount": 5,
+      "maturityRating": "NOT_MATURE",
+      "allowAnonLogging": false,
+      "contentVersion": "2.1.1.0.preview.1",
+      "panelizationSummary": {
+        "containsEpubBubbles": false,
+        "containsImageBubbles": false
+      },
+      "imageLinks": {
+        "smallThumbnail": "http://books.google.com/books/content?id=uW9xST9UsOIC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=uW9xST9UsOIC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+      },
+      "language": "en",
+      "previewLink": "http://books.google.com/books?id=uW9xST9UsOIC&printsec=frontcover&dq=science+fiction&hl=&cd=2&source=gbs_api",
+      "infoLink": "https://play.google.com/store/books/details?id=uW9xST9UsOIC&source=gbs_api",
+      "canonicalVolumeLink": "https://market.android.com/details?id=book-uW9xST9UsOIC",
+      "id": "uW9xST9UsOIC"
+    }
+  ]
+}
