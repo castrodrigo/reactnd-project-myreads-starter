@@ -22,10 +22,10 @@ const Book = ({ book, onUpdate }) => (
 
 Book.propTypes = {
   book: PropTypes.shape({
-    imageLinks: PropTypes.object.isRequired,
-    shelf: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    authors: PropTypes.array.isRequired
+    imageLinks: PropTypes.object,
+    shelf: PropTypes.string,
+    title: PropTypes.string,
+    authors: PropTypes.array
   }).isRequired,
   onUpdate: PropTypes.func.isRequired
 };

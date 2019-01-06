@@ -52,7 +52,7 @@ class BooksApp extends React.Component {
         />
         <Route
           path="/search"
-          render={() => <Search books={this.state.books} />}
+          render={() => <Search onBookUpdate={this.updateBookShelfHandler} />}
         />
       </div>
     );
