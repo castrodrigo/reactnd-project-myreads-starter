@@ -16,12 +16,12 @@ describe('Book Options', () => {
     expect(select.props().value).toBe('wantToRead');
   });
 
-  it('should show no selection if no value is received', () => {
+  it('should show None if no value is received', () => {
     const wrapper = shallow(<BookOptions {...props} shelf="" />);
 
     const select = wrapper.find('select');
 
-    expect(select.props().value).toBe('');
+    expect(select.props().value).toBe('none');
   });
 
   it('should call onUpdate on change', () => {

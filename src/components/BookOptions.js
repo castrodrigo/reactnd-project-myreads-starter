@@ -8,9 +8,13 @@ const BookOptions = ({ shelf, onUpdate }) => {
     { key: 'read', name: 'Read' },
     { key: 'none', name: 'None' }
   ];
+  const selectedShelf = shelf || 'none';
   return (
     <div className="book-shelf-changer">
-      <select value={shelf} onChange={event => onUpdate(event.target.value)}>
+      <select
+        value={selectedShelf}
+        onChange={event => onUpdate(event.target.value)}
+      >
         <option value="move" disabled>
           Move to...
         </option>
@@ -27,10 +31,6 @@ const BookOptions = ({ shelf, onUpdate }) => {
 BookOptions.propTypes = {
   shelf: PropTypes.string,
   onUpdate: PropTypes.func.isRequired
-};
-
-BookOptions.defaulProps = {
-  shelf: null
 };
 
 export default BookOptions;
