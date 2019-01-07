@@ -29,11 +29,11 @@ class BooksApp extends React.Component {
   }
 
   updateBookShelfHandler = (book, shelf) => {
-    BooksAPI.update(book, shelf).then(data => {
-      const filteredByShelf = convertResponseFilters(data);
+    BooksAPI.update(book, shelf).then(filteredByShelf => {
+      const filter = convertResponseFilters(filteredByShelf);
       this.setState(prevState => ({
         books:
-          filteredByShelf[book.id] && filteredByShelf[book.id] === shelf
+          filter[book.id] && filter[book.id] === shelf
             ? updateBookList(prevState.books, { ...book, shelf })
             : popBookList(prevState.books, book),
         filteredByShelf
@@ -61,7 +61,9 @@ class BooksApp extends React.Component {
           render={() => (
             <Search
               onBookUpdate={this.updateBookShelfHandler}
-              filteredByShelf={this.state.filteredByShelf}
+              filteredByShelf={convertResponseFilters(
+                this.state.filteredByShelf
+              )}
             />
           )}
         />

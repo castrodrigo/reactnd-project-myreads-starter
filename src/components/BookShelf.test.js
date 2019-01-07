@@ -27,17 +27,19 @@ describe('Book Shelf', () => {
       },
       {
         ...BookMockData,
-        id: '5354335',
+        id: '0351399',
         tittle: 'book4',
         shelf: 'sh3'
       }
     ],
+    filtered: [],
     onBookUpdate: jest.fn()
   };
 
   it('should filter books by shelf', () => {
+    const mockFiltered = ['3874929'];
     const wrapper = shallow(
-      <BookShelf {...props} shelf="sh1" name="Shelf 1" />
+      <BookShelf {...props} name="Shelf 1" filtered={mockFiltered} />
     );
 
     const books = wrapper.find(Book);
@@ -46,8 +48,9 @@ describe('Book Shelf', () => {
   });
 
   it('should filter multiple books by shelf', () => {
+    const mockFiltered = ['0998983', '5354335'];
     const wrapper = shallow(
-      <BookShelf {...props} shelf="sh2" name="Shelf 2" />
+      <BookShelf {...props} name="Shelf 2" filtered={mockFiltered} />
     );
 
     const books = wrapper.find(Book);
@@ -56,9 +59,7 @@ describe('Book Shelf', () => {
   });
 
   it('should not return an error with there are no books on the shelf', () => {
-    const wrapper = shallow(
-      <BookShelf {...props} shelf="sh4" name="Shelf 4" />
-    );
+    const wrapper = shallow(<BookShelf {...props} name="Shelf 4" />);
 
     const books = wrapper.find(Book);
 
