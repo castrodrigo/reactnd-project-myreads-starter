@@ -9,7 +9,7 @@ export const convertResponseFilters = data =>
 
 export const generateFilters = books =>
   books.reduce((f, book) => {
-    f[book.id] = book.shelf;
+    f[book.shelf] ? f[book.shelf].push(book.id) : (f[book.shelf] = [book.id]);
     return f;
   }, {});
 
