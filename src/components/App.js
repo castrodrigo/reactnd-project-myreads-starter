@@ -3,7 +3,12 @@ import { Route } from 'react-router-dom';
 import * as BooksAPI from '../api/BooksAPI';
 import Search from './Search';
 import List from './List';
-import { convertResponseFilters } from '../helpers';
+import {
+  generateFilters,
+  convertResponseFilters,
+  popBookList,
+  updateBookList
+} from '../helpers';
 import './App.css';
 
 class BooksApp extends React.Component {
@@ -19,33 +24,20 @@ class BooksApp extends React.Component {
 
   componentDidMount() {
     BooksAPI.getAll().then(books => {
-      const filteredByShelf = books.reduce((f, book) => {
-        f[book.id] = book.shelf;
-        return f;
-      }, {});
-      this.setState({ books, filteredByShelf });
+      this.setState({ books, filteredByShelf: generateFilters(books) });
     });
   }
 
   updateBookShelfHandler = (book, shelf) => {
     BooksAPI.update(book, shelf).then(data => {
-      const updatedShelf = Object.keys(data).find(
-        key => data[key].filter(itemId => itemId === book.id)[0]
-      );
-      if (updatedShelf === shelf) {
-        this.setState(prevState => ({
-          books: [
-            ...prevState.books.filter(item => item.id !== book.id),
-            { ...book, shelf }
-          ],
-          filteredByShelf: convertResponseFilters(data)
-        }));
-      } else {
-        this.setState(prevState => ({
-          books: [...prevState.books.filter(item => item.id !== book.id)],
-          filteredByShelf: convertResponseFilters(data)
-        }));
-      }
+      const filteredByShelf = convertResponseFilters(data);
+      this.setState(prevState => ({
+        books:
+          filteredByShelf[book.id] && filteredByShelf[book.id] === shelf
+            ? updateBookList(prevState.books, { ...book, shelf })
+            : popBookList(prevState.books, book),
+        filteredByShelf
+      }));
     });
   };
 
@@ -60,6 +52,7 @@ class BooksApp extends React.Component {
               books={this.state.books}
               shelves={this.shelves}
               onBookUpdate={this.updateBookShelfHandler}
+              filteredByShelf={this.state.filteredByShelf}
             />
           )}
         />
