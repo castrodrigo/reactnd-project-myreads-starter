@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import BookShelf from './BookShelf';
 
-const List = ({ books, shelves, onBookUpdate }) => (
+const List = ({ books, shelves, onBookUpdate, filteredByShelf }) => (
   <div className="list-books">
     <div className="list-books-title">
       <h1>MyReads</h1>
@@ -13,9 +13,9 @@ const List = ({ books, shelves, onBookUpdate }) => (
         {shelves.map(shelf => (
           <BookShelf
             key={shelf.type}
-            shelf={shelf.type}
             name={shelf.name}
             books={books}
+            filtered={filteredByShelf[shelf.type] || []}
             onBookUpdate={onBookUpdate}
           />
         ))}
@@ -30,7 +30,12 @@ const List = ({ books, shelves, onBookUpdate }) => (
 List.propTypes = {
   books: PropTypes.array.isRequired,
   shelves: PropTypes.array.isRequired,
-  onBookUpdate: PropTypes.func.isRequired
+  onBookUpdate: PropTypes.func.isRequired,
+  filteredByShelf: PropTypes.object.isRequired
+};
+
+List.defaultProps = {
+  filteredByShelf: {}
 };
 
 export default List;

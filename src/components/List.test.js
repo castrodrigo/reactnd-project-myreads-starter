@@ -7,6 +7,7 @@ describe('List', () => {
   const props = {
     books: [],
     shelves: [{ name: 'Sh 1', type: 'sh1' }, { name: 'Sh 2', type: 'sh2' }],
+    filteredByShelf: {},
     onBookUpdate: jest.fn()
   };
 
