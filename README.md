@@ -1,92 +1,90 @@
-# MyReads Project
+# React My Reads Project
 
-This is the starter template for the final assessment project for Udacity's React Fundamentals course. The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
+Project developed for [React Nanodegree at Udacity](https://eu.udacity.com/course/react-nanodegree--nd019).
+The bootstrap of this project was forked from this [repo](https://github.com/udacity/reactnd-project-myreads-starter).
 
-Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
+For the bootstrap and setup [Create React App](https://github.com/facebookincubator/create-react-app) was used.
 
-## TL;DR
+## The Project
 
-To get started developing right away:
+The project consists in a stateful frontend application, responsible for management of a personal library.
+It contains a series of shelves that hold books in different states. For example
 
-* install all project dependencies with `npm install`
-* start the development server with `npm start`
+```
+- Books that I'm currently reading
+- Books that I want to read
+- Books that I've read already
+```
 
-## What You're Getting
+It is possible to move a book from one shelf to another as well as remove it from the shelf visualization (like a deletion).
+
+To add new books on the available shelves, there is a search page that allows the user to search new titles and select one of the shelves directly from the results.
+
+## Technical
+
+### To Run
+
+In order to run the project
+
+1. Clone the repository
+
 ```bash
-├── CONTRIBUTING.md
-├── README.md - This file.
-├── SEARCH_TERMS.md # The whitelisted short collection of available search terms for you to use with your app.
-├── package.json # npm package manager file. It's unlikely that you'll need to modify this.
-├── public
-│   ├── favicon.ico # React Icon, You may change if you wish.
-│   └── index.html # DO NOT MODIFY
-└── src
-    ├── App.css # Styles for your app. Feel free to customize this as you desire.
-    ├── App.js # This is the root of your app. Contains static HTML right now.
-    ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
-    ├── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
-    ├── icons # Helpful images for your app. Use at your discretion.
-    │   ├── add.svg
-    │   ├── arrow-back.svg
-    │   └── arrow-drop-down.svg
-    ├── index.css # Global styles. You probably won't need to change anything here.
-    └── index.js # You should not need to modify this file. It is used for DOM rendering only.
+git clone git@github.com:castrodrigo/react-my-reads-project.git
 ```
 
-Remember that good React design practice is to create new JS files for each component and use import/require statements to include them where they are needed.
+2. Inside the cloned folder
 
-## Backend Server
+- 2.1 Install the packages with: **[yarn](https://yarnpkg.com/lang/en/)** or **[npm](https://www.npmjs.com/)**
 
-To simplify your development process, we've provided a backend server for you to develop against. The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods you will need to perform necessary operations on the backend:
-
-* [`getAll`](#getall)
-* [`update`](#update)
-* [`search`](#search)
-
-### `getAll`
-
-Method Signature:
-
-```js
-getAll()
+```bash
+yarn
 ```
 
-* Returns a Promise which resolves to a JSON object containing a collection of book objects.
-* This collection represents the books currently in the bookshelves in your app.
-
-### `update`
-
-Method Signature:
-
-```js
-update(book, shelf)
+```bash
+npm start
 ```
 
-* book: `<Object>` containing at minimum an `id` attribute
-* shelf: `<String>` contains one of ["wantToRead", "currentlyReading", "read"]  
-* Returns a Promise which resolves to a JSON object containing the response data of the POST request
+- 2.2 After installing the packages, to run the app:
 
-### `search`
-
-Method Signature:
-
-```js
-search(query)
+```bash
+yarn start
 ```
 
-* query: `<String>`
-* Returns a Promise which resolves to a JSON object containing a collection of a maximum of 20 book objects.
-* These books do not know which shelf they are on. They are raw results only. You'll need to make sure that books have the correct state while on the search page.
+```bash
+npm start
+```
 
-## Important
-The backend API uses a fixed set of cached search results and is limited to a particular set of search terms, which can be found in [SEARCH_TERMS.md](SEARCH_TERMS.md). That list of terms are the _only_ terms that will work with the backend, so don't be surprised if your searches for Basket Weaving or Bubble Wrap don't come back with any results.
+- 2.3 The application will be available at port 3000. `http://localhost:3000`
 
-## Create React App
+### Tests
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+The appllications contains tests using `Jest` and `Enzyme`
 
-## Contributing
+1. Run tests
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+```bash
+yarn test
+```
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+```bash
+npm run test
+```
+
+2. Run test coverage
+
+```bash
+yarn test --coverage
+```
+
+```bash
+npm run test --coverage
+```
+
+### Project URLS
+
+- List Page `http://localhost:3000/`
+- Search Page `http://localhost:3000/search`
+
+### Backend Server
+
+The API used in this project was provided by Udacity at `https://reactnd-books-api.udacity.com`
