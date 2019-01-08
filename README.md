@@ -22,9 +22,11 @@ To add new books on the available shelves, there is a search page that allows th
 
 ## Technical
 
+> All the commands shown on this section comprise both package managers: **yarn** and **npm**
+
 ### To Run
 
-In order to run the project
+In order to run the project.
 
 1. Clone the repository
 
